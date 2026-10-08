@@ -1,27 +1,27 @@
 # 💰 Personal FinAI — AI-Powered Personal Finance Dashboard
 
-An AI-powered personal finance application built as part of the **Samsung Innovation Campus (SIC) Generative AI Capstone Project**.
+An AI-powered personal finance application developed as part of the **Samsung Innovation Campus (SIC) Generative AI Capstone Project**.
 
-Personal FinAI helps users analyze their expenses, automatically extract information from receipts, categorize transactions using Generative AI, visualize spending patterns, simulate SIP-based wealth growth, and generate an AI-powered financial health assessment.
+Personal FinAI helps users analyze expenses, extract transaction information from receipts using Vision AI, automatically categorize transactions using Generative AI, visualize spending patterns, simulate SIP-based wealth growth, and generate an AI-powered financial health assessment.
 
 ---
 
 ## 📌 Project Overview
 
-Managing personal finances often requires manually entering expenses, categorizing transactions, analyzing spending patterns, and planning savings.
+Managing personal finances often involves manually recording expenses, categorizing transactions, analyzing spending patterns, and planning savings.
 
-**Personal FinAI** combines traditional financial analysis with Generative AI to simplify these tasks through a mobile-oriented Streamlit web application.
+**Personal FinAI** combines financial data analysis with Generative AI to simplify these tasks through a mobile-oriented Streamlit web application.
 
 The application supports:
 
-- Receipt image scanning using Vision AI
-- CSV bank statement analysis
-- AI-powered transaction categorization
-- Expense analytics and visualization
-- SIP and wealth-growth simulation
-- AI-powered financial health scoring
-- AI-generated spending observations and action plans
-- Downloadable financial health reports in PDF format
+- 📷 AI-powered receipt scanning
+- 📄 CSV bank statement analysis
+- 🏷️ AI-powered transaction categorization
+- 📊 Expense analytics and visualization
+- 📈 SIP and wealth-growth simulation
+- 🤖 AI-powered financial health assessment
+- 💡 AI-generated spending observations and action plans
+- 📑 Downloadable financial health reports
 
 ---
 
@@ -29,12 +29,13 @@ The application supports:
 
 ### 📷 1. AI Receipt Scanner
 
-Users can either:
+Users can:
 
-- Capture a receipt using the device camera
+- Capture a receipt using a device camera
 - Upload one or more receipt images
+- Process multiple receipts in parallel
 
-The application uses Vision AI to extract structured information such as:
+Vision AI extracts structured information from receipts, including:
 
 - Date
 - Merchant / description
@@ -44,8 +45,6 @@ The application uses Vision AI to extract structured information such as:
 - Payment method
 - Confidence level
 - Summary of purchased items
-
-Multiple receipts can also be processed in parallel.
 
 ---
 
@@ -83,13 +82,13 @@ The dashboard calculates and displays:
 - Expense category breakdown
 - Income vs. expenses vs. savings target
 
-Interactive charts are generated using Plotly.
+Interactive visualizations are generated using Plotly.
 
 ---
 
 ### 📈 4. SIP & Wealth Simulator
 
-The application provides a basic SIP-based wealth simulation.
+The application provides a SIP-based wealth projection tool.
 
 Users can configure:
 
@@ -98,21 +97,21 @@ Users can configure:
 - Investment duration
 - Annual SIP step-up percentage
 
-The application estimates:
+The simulator estimates:
 
 - Total amount invested
 - Projected wealth
 - Year-by-year wealth growth
 
-> The SIP simulator is an educational projection and should not be considered investment advice or a guaranteed return.
+> **Note:** SIP projections are educational estimates based on user-provided assumptions. They are not guaranteed investment returns or investment advice.
 
 ---
 
 ### 🤖 5. AI Financial Health Audit
 
-The application uses Generative AI to evaluate the user's financial data.
+The application uses Generative AI to analyze the user's financial information.
 
-The AI receives information such as:
+The analysis can consider:
 
 - Income
 - Savings target
@@ -122,7 +121,7 @@ The AI receives information such as:
 - Investment duration
 - Expected return assumption
 
-It generates:
+The AI generates:
 
 - Financial health score out of 100
 - Financial status
@@ -134,7 +133,7 @@ It generates:
 
 ### 📑 6. PDF Financial Health Report
 
-Users can generate and download a structured PDF report containing:
+Users can generate and download a structured financial report containing:
 
 - Monthly income
 - Total spending
@@ -151,13 +150,11 @@ Users can generate and download a structured PDF report containing:
 
 ## 🧠 Generative AI Integration
 
-Generative AI is used in multiple parts of the application rather than only as a chatbot.
-
-### AI Use Cases
+Generative AI is integrated into multiple parts of the application.
 
 | Feature | AI Usage |
 |---|---|
-| Receipt Scanner | Vision AI extracts structured receipt data |
+| Receipt Scanner | Vision AI extracts structured receipt information |
 | Transaction Categorization | LLM classifies transaction descriptions |
 | Financial Health Audit | LLM analyzes financial information |
 | Financial Recommendations | LLM generates observations and action steps |
@@ -170,79 +167,69 @@ The application uses the **Groq API** to access the configured language and visi
 ## 🏗️ Application Workflow
 
 ```text
-                    ┌─────────────────────┐
-                    │       User          │
-                    └──────────┬──────────┘
-                               │
-              ┌────────────────┴────────────────┐
-              │                                 │
-              ▼                                 ▼
-       Receipt Image                       CSV Statement
-              │                                 │
-              ▼                                 ▼
-        Vision AI                         LLM Categorization
-              │                                 │
-              └──────────────┬──────────────────┘
-                             ▼
-                  Transaction Information
-                             │
-                             ▼
-                  Financial Data Analysis
-                             │
-              ┌──────────────┼──────────────┐
-              ▼              ▼              ▼
-         Analytics      SIP Simulator    AI Health Audit
-              │              │              │
-              └──────────────┼──────────────┘
-                             ▼
-                   Financial Health Report
-                             │
-                             ▼
-                       PDF Export
+                         ┌──────────────────┐
+                         │       User       │
+                         └────────┬─────────┘
+                                  │
+                   ┌──────────────┴──────────────┐
+                   │                             │
+                   ▼                             ▼
+            Receipt Image                  CSV Statement
+                   │                             │
+                   ▼                             ▼
+              Vision AI                  LLM Categorization
+                   │                             │
+                   └──────────────┬──────────────┘
+                                  ▼
+                       Transaction Information
+                                  │
+                                  ▼
+                       Financial Data Analysis
+                                  │
+                 ┌────────────────┼────────────────┐
+                 │                │                │
+                 ▼                ▼                ▼
+             Analytics      SIP Simulator     AI Health Audit
+                 │                │                │
+                 └────────────────┼────────────────┘
+                                  ▼
+                    Financial Health Assessment
+                                  │
+                                  ▼
+                         PDF Report Export
 ```
 
 ---
 
-## 🛠️ Technology Stack
+## 📸 Application Screenshots
 
-### Application
+### 🏠 Dashboard
 
-- **Python**
-- **Streamlit**
+![Personal FinAI Dashboard](screenshots/1-dashboard.png)
 
-### Generative AI
+### 📥 Entry & OCR
 
-- **Groq API**
-- LLM-based transaction categorization
-- Vision AI-based receipt extraction
-- Structured JSON AI responses
+![Entry and OCR](screenshots/2-entry-ocr.png)
 
-### Data Processing
+### 📊 Financial Analytics
 
-- **Pandas**
-- CSV processing
-- Transaction aggregation and categorization
+![Financial Analytics](screenshots/3-analytics-overview.png)
 
-### Visualization
+### 💵 Cash Flow Analysis
 
-- **Plotly**
-- Interactive expense and wealth-growth charts
+![Cash Flow Analysis](screenshots/4-cash-flow.png)
 
-### Image Processing
+### 📈 SIP Wealth Simulator
 
-- **Pillow**
-- Receipt image resizing and compression
+![SIP Wealth Simulator](screenshots/5-sip-simulator.png)
 
-### Report Generation
+### 🤖 AI Financial Health Audit
 
-- **ReportLab**
-- PDF financial health reports
+![AI Financial Health Audit](screenshots/6-ai-audit.png)
 
 ---
 
 ## 📱 Application Sections
-
-The application is organized into four main sections:
 
 ### 1. 📥 Entry & OCR
 
@@ -278,13 +265,71 @@ The application is organized into four main sections:
 
 ---
 
-## 🔐 API Key & Security
+## 🛠️ Technology Stack
 
-The application does **not require an API key to be hard-coded into the source code**.
+### Programming & Application
 
-The Groq API key is entered at runtime through the application's password-type input field and passed to the Groq client when AI functionality is used.
+- **Python**
+- **Streamlit**
 
-For local development, users should never commit API keys, passwords, or other credentials to the repository.
+### Generative AI
+
+- **Groq API**
+- LLM-based transaction categorization
+- Vision AI-based receipt extraction
+- Structured JSON AI responses
+
+### Data Processing
+
+- **Pandas**
+- CSV processing
+- Transaction aggregation
+- Expense categorization
+
+### Visualization
+
+- **Plotly**
+- Interactive financial charts
+- Expense breakdown visualization
+- Wealth-growth visualization
+
+### Image Processing
+
+- **Pillow**
+- Receipt image resizing
+- Image compression
+
+### Report Generation
+
+- **ReportLab**
+- Automated PDF financial reports
+
+---
+
+## 📂 Project Structure
+
+```text
+finai-mobile-app/
+│
+├── .devcontainer/
+│
+├── screenshots/
+│   ├── 1-dashboard.png
+│   ├── 2-entry-ocr.png
+│   ├── 3-analytics-overview.png
+│   ├── 4-cash-flow.png
+│   ├── 5-sip-simulator.png
+│   └── 6-ai-audit.png
+│
+├── app.py
+│   └── Main Streamlit application
+│
+├── requirements.txt
+│   └── Python dependencies
+│
+└── README.md
+    └── Project documentation
+```
 
 ---
 
@@ -293,8 +338,8 @@ For local development, users should never commit API keys, passwords, or other c
 ### Prerequisites
 
 - Python 3.x
-- A Groq API key
 - Git
+- A Groq API key
 
 ### 1. Clone the repository
 
@@ -331,38 +376,31 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-### 5. Enter your Groq API key
+### 5. Enter the Groq API key
 
-Open the application in your browser and enter your Groq API key in:
+After opening the application, enter your Groq API key in:
 
 **App Settings → Groq API Key**
 
----
-
-## 📂 Project Structure
-
-```text
-finai-mobile-app/
-│
-├── .devcontainer/
-│
-├── app.py
-│   └── Main Streamlit application
-│
-├── requirements.txt
-│   └── Python dependencies
-│
-└── README.md
-    └── Project documentation
-```
+The application uses the key at runtime for AI-powered functionality.
 
 ---
 
-## 🎓 SIC Generative AI Capstone
+## 🔐 Security & API Key Handling
+
+The application does not require a Groq API key to be hard-coded into the source code.
+
+The API key is entered at runtime through a password-type input field and passed to the Groq client when AI functionality is used.
+
+**Never commit API keys, passwords, tokens, or other credentials to the repository.**
+
+---
+
+## 🎓 Samsung Innovation Campus Capstone
 
 This project was developed as part of the **Samsung Innovation Campus (SIC) Generative AI program**.
 
-The project demonstrates the practical application of Generative AI in a real-world domain by combining:
+The project demonstrates the practical application of Generative AI to a real-world personal finance use case by combining:
 
 - Generative AI
 - Vision AI
@@ -372,7 +410,7 @@ The project demonstrates the practical application of Generative AI in a real-wo
 - Financial analytics
 - Automated reporting
 
-The project focuses on using AI to transform raw financial information into structured insights and actionable recommendations.
+The project focuses on transforming raw financial information into structured data, visual insights, and AI-generated financial observations.
 
 ---
 
@@ -380,17 +418,17 @@ The project focuses on using AI to transform raw financial information into stru
 
 Potential future improvements include:
 
-- Persistent user accounts and transaction storage
-- Database-backed transaction history
-- More robust receipt validation
-- Improved financial trend analysis
+- Persistent transaction storage
+- Database-backed user transaction history
+- User authentication and authorization
+- Improved receipt validation
 - Budget alerts and notifications
 - Personalized financial goals
-- Advanced AI financial insights
-- Authentication and authorization
+- Advanced financial trend analysis
+- More detailed AI insights
 - Secure server-side API key management
-- More detailed financial reports
-- Deployment with production-grade infrastructure
+- Enhanced financial reports
+- Production-grade deployment
 
 ---
 
@@ -398,17 +436,17 @@ Potential future improvements include:
 
 Personal FinAI is an educational and demonstration project.
 
-Financial health scores, AI-generated recommendations, SIP projections, and investment calculations are intended for informational purposes only and should **not be considered professional financial, investment, tax, or legal advice**.
+Financial health scores, AI-generated recommendations, SIP projections, and financial calculations are intended for informational purposes only and should **not be considered professional financial, investment, tax, or legal advice**.
 
-Investment returns shown by the simulator are projections based on user-provided assumptions and are not guaranteed.
+Investment projections are based on user-provided assumptions and are not guaranteed returns.
 
 ---
 
-## 👨‍💻 Project
+## 👨‍💻 Project Information
 
-**Personal FinAI — AI-Powered Personal Finance Dashboard**
+**Project:** Personal FinAI — AI-Powered Personal Finance Dashboard
 
-Developed as part of the **Samsung Innovation Campus Generative AI Capstone Project**.
+**Program:** Samsung Innovation Campus — Generative AI Capstone Project
 
 **Repository:**  
 https://github.com/IoTSec-AI/finai-mobile-app
